@@ -1,0 +1,14 @@
+$(document).ready(function() {
+    // HelpDropDown Stay Open
+    $('.dropdown-menu').on('click', function(event){
+        // The event won't be propagated up to the document NODE and
+        // therefore delegated events won't be fired
+        event.stopPropagation();
+    });
+});
+
+// Enable Tooltips
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+});
